@@ -44,6 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Seriesname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -114,9 +115,9 @@
             // 
             // chart1
             // 
-            this.chart1.AxesExtrema = ((digit.AxesExtrema)((((digit.AxesExtrema.AutoMinX | digit.AxesExtrema.AutoMaxX)
-                        | digit.AxesExtrema.AutoMinY)
-                        | digit.AxesExtrema.AutoMaxY)));
+            this.chart1.AxesExtrema = ((digit.AxesExtrema)((((digit.AxesExtrema.AutoMinX | digit.AxesExtrema.AutoMaxX) 
+            | digit.AxesExtrema.AutoMinY) 
+            | digit.AxesExtrema.AutoMaxY)));
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.LogarythmicY = true;
@@ -127,11 +128,11 @@
             this.chart1.TicksWidth = 20;
             this.chart1.Title = "Chart";
             this.chart1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.chart1.VisibleElements = ((digit.ChartElements)((((((digit.ChartElements.Title | digit.ChartElements.YTitle)
-                        | digit.ChartElements.XAxis)
-                        | digit.ChartElements.YAxis)
-                        | digit.ChartElements.Grid)
-                        | digit.ChartElements.Series)));
+            this.chart1.VisibleElements = ((digit.ChartElements)((((((digit.ChartElements.Title | digit.ChartElements.YTitle) 
+            | digit.ChartElements.XAxis) 
+            | digit.ChartElements.YAxis) 
+            | digit.ChartElements.Grid) 
+            | digit.ChartElements.Series)));
             this.chart1.XAxisMax = 6.28F;
             this.chart1.XAxisMin = 0F;
             this.chart1.XAxisTitle = "Time [ns]";
@@ -139,14 +140,14 @@
             this.chart1.YAxisMin = -1F;
             this.chart1.YAxisTitle = "Counts";
             this.chart1.Zoomable = true;
-            this.chart1.ZoomReset += new System.EventHandler(this.chart1_ZoomReset);
             this.chart1.Zoomed += new digit.ZoomEventHandler(this.chart1_Zoomed);
+            this.chart1.ZoomReset += new System.EventHandler(this.chart1_ZoomReset);
             // 
             // chart2
             // 
-            this.chart2.AxesExtrema = ((digit.AxesExtrema)((((digit.AxesExtrema.AutoMinX | digit.AxesExtrema.AutoMaxX)
-                        | digit.AxesExtrema.AutoMinY)
-                        | digit.AxesExtrema.AutoMaxY)));
+            this.chart2.AxesExtrema = ((digit.AxesExtrema)((((digit.AxesExtrema.AutoMinX | digit.AxesExtrema.AutoMaxX) 
+            | digit.AxesExtrema.AutoMinY) 
+            | digit.AxesExtrema.AutoMaxY)));
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chart2.Location = new System.Drawing.Point(0, 0);
             this.chart2.Name = "chart2";
@@ -156,11 +157,11 @@
             this.chart2.TicksWidth = 20;
             this.chart2.Title = "Residuals";
             this.chart2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.chart2.VisibleElements = ((digit.ChartElements)((((((digit.ChartElements.XTitle | digit.ChartElements.YTitle)
-                        | digit.ChartElements.XAxis)
-                        | digit.ChartElements.YAxis)
-                        | digit.ChartElements.Grid)
-                        | digit.ChartElements.Series)));
+            this.chart2.VisibleElements = ((digit.ChartElements)((((((digit.ChartElements.XTitle | digit.ChartElements.YTitle) 
+            | digit.ChartElements.XAxis) 
+            | digit.ChartElements.YAxis) 
+            | digit.ChartElements.Grid) 
+            | digit.ChartElements.Series)));
             this.chart2.XAxisMax = 6.28F;
             this.chart2.XAxisMin = 0F;
             this.chart2.XAxisTitle = "Time [ns]";
@@ -264,8 +265,8 @@
             this.seriesGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.seriesGrid.Size = new System.Drawing.Size(250, 18);
             this.seriesGrid.TabIndex = 0;
-            this.seriesGrid.CurrentCellDirtyStateChanged += new System.EventHandler(this.seriesGrid_CurrentCellDirtyStateChanged);
             this.seriesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.seriesGrid_CellContentClick);
+            this.seriesGrid.CurrentCellDirtyStateChanged += new System.EventHandler(this.seriesGrid_CurrentCellDirtyStateChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -293,9 +294,9 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.splitContainer1);
             this.panel2.Location = new System.Drawing.Point(12, 28);
@@ -328,11 +329,11 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fit";
-            this.TopMost = true;
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.SpectrumFitForm_HelpRequested);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

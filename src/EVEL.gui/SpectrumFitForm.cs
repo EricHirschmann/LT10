@@ -111,10 +111,12 @@ namespace Evel.gui {
                 time = (float)((ch - spectrum.Parameters["ranges"].Components[0]["zero"].Value) * bs);
                 for (i = 0, s=0; i<curves.Length; i++)
                     if (curveNames[i] != String.Empty)
-                        theoreticalCurves[s++].AddPoint(time, curves[i][ch], false);
+                        theoreticalCurves[s++].AddPoint(time, Math.Max(spectrum.Container.Data[stop - 5] / 2, curves[i][ch]), false);
                     
 
                 this.experimentSeries.AddPoint(time, spectrum.Container.Data[ch+spectrum.BufferStartPos-1], false);
+
+
                 //chart1.Series[1].AddXY(ch, (float)ths["Theoretical spectrum"][ch]);
                 
                 //foreach (LineSeries series in theoreticalCurves) {
@@ -127,6 +129,10 @@ namespace Evel.gui {
             chart2.AddSeries(this.residualsSeries);
             for (i = 0; i < theoreticalCurves.Count; i++)
                 chart1.AddSeries(theoreticalCurves[i]);
+
+            if (chart1.LogarythmicY && chart1.YAxisMin <= 0)
+                chart1.YAxisMin = 1;
+            
             chart1.Refresh();
             chart2.Refresh();
         }
