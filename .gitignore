@@ -1,0 +1,10 @@
+\!Debug/
+\!Release/
+\!Install/
+log/
+Debug/
+Release/
+*.sdf
+*.suo
+*.opensdf
+*.user

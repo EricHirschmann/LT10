@@ -1,0 +1,13 @@
+﻿1. Changing many statuses at one shoot
+	Select status controler cells. Press space to edit status of last selected controler. 
+	(Pressing space will not deselect other cells). Choosing one of the statuses will change statuses
+	of all other selected controllers.
+	
+2. Switching fixed to free or free to fixed with one click
+	To switch parameter status from fixed (either local or common) to free and vice versa click the status
+	selector (combo box at the top of parameters grid) with middle mouse button.
+	
+3. Switching local to common or common to local with one click
+	To switch parameter status from local (either free or fixed) to common and vice versa hold
+	keyboard control key and click the status selector 
+	(combo box at the top of parameters grid) with middle mouse button.

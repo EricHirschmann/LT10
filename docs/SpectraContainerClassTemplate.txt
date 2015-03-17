@@ -1,0 +1,38 @@
+﻿Class defining container of spectra must implement Evel.interfaces.ISpectraContainer.
+New container class may inherit from Evel.engine.SpectraContainerBase
+There is SpectraContainerBase class designed which already implements this interface. However some of its 
+methods throws NotImplementedException so designed of new container class is obliged to override them.
+There are also constructors which must be also declared in new container class. 
+Here you can find minimum set of methods which must be implemented
+
+
+        public constructor(IProject parentProject, IModel model)
+            : base(parentProject, model) {
+            ...
+        }
+
+        public constructor(IProject parentProject, string name, IModel model, string[] spectraPaths, ICollection<GroupDefinition> groupsDefinition)
+            : base(parentProject, name, model, spectraPaths, groupsDefinition) {
+            ...
+        }
+      
+        public constructor(IProject parentProject, string filePath)
+            : base(parentProject, filePath) {
+            ...
+        }
+
+        public virtual double[] getTheoreticalSpectrum(ISpectrum spectrum) {
+            ...
+        }
+
+        public virtual void getEvaluationArray(object target, double[] diffs) {
+            ...
+        }
+
+        public virtual void getTheoreticalSpectrum(ISpectrum spectrum, ref double[] theoreticalCurve, ref double[] differences, bool intensitiesFromSearch) {
+            ...
+        }
+
+        public virtual ISpectrum CreateSpectrum(System.Xml.XmlReader spectrumReader) {
+            ...
+        }

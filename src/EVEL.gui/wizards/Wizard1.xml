@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<wizard>
+  <step id="1">
+    <controls>
+      <control container="mainform" menu="File" show="true" />
+    </controls>
+    <html>
+      <![CDATA[<h4>Creating new project</h4><p>From main menu choose <strong>File</strong> menu.</p>]]>      
+      
+    </html>
+  </step>
+
+  <step id="2">
+    <controls>
+      <control container="mainform" menu="File\New" show="true" />
+    </controls>
+    <html>
+      <![CDATA[<h4>Creating new project</h4><p>Click <strong>New</strong> to open New Project Wizard.</p>]]>
+    </html>
+  </step>
+
+  <step id="3" dialog="ModelChooserDialog">
+    <controls>
+      <control container="ModelChooserDialog" control="OkButton" />
+    </controls>
+    <html>
+      <![CDATA[<h4>Creating new project</h4><p>Select theoretical model with which spectra will be analysed. This tutorial is example of <strong>Multiexponential</strong> model. Once theoretical model is selected, click <strong>Ok</strong></p>
+      ]]>
+    </html>
+  </step>
+
+  <step id="4" dialog="NewProjectDialog">
+    <controls>
+      <control container="NewProjectDialog" control="OkButton" />
+    </controls>
+    <html>
+      <![CDATA[<h4>Creating new project</h4><p>Select spectra and click ok</p>
+      ]]>
+    </html>
+  </step>
+
+</wizard>

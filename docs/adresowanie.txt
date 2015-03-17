@@ -1,0 +1,23 @@
+﻿//raw group
+
+[d1;s100;g2;tau#3]
+document 0
+spectrum 99
+group 2
+tau 3
+
+//contributed group
+
+[d1;s100;g2;ctrb]
+document 0
+spectrum 99
+group 2
+contribution
+
+//raw/contributed group - unique parameter
+
+[d1;s100;g2;sup]
+document 0
+spectrum 99
+group 2
+some unique parameter

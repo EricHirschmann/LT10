@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- 
+  deltax for parameter is calculated with equation:
+  deltax = parameterValue * mp + value
+  where 'parameterValue' is actual value of parameter for which deltax is about to calculate
+  values of 'mp' and 'value' are defined below
+-->
+<parameters>
+  <groups>
+    <!-- sample -->
+    <group kind="1">
+      <contribution mp="0.05" value="0.001" />
+      <deltax name="int" mp="0.01" value="0.001" />
+      <deltax name="tauA" mp="0.01" value="0.001" />
+      <deltax name="tauB" mp="0.01" value="0.001" />
+      <deltax name="kappaA" mp="0.01" value="0.001" />
+      <deltax name="kappaB" mp="0.01" value="0.001" />
+      <deltax name="taufree" mp="0.01" value="0.001" />
+      <deltax name="intA" mp="0.01" value="0.001" />
+      <deltax name="intB" mp="0.01" value="0.001" />
+    </group>
+    <!-- source -->
+    <group kind="2">
+      <deltax name="contribution" mp="0.05" value="0.001" />
+      <deltax name="int" mp="0.01" value="0.001" />
+      <deltax name="tau" mp="0.01" value="0.001" />
+    </group>
+    <!-- prompt -->
+    <group kind="3">
+      <deltax name="int" mp="0.01" value="0.001" />
+      <deltax name="fwhm" mp="0.005" value="0.001" />
+      <deltax name="shift" mp="0.01" value="0.003" />
+      <deltax name="tauleft" mp="0.01" value="0.001" />
+      <deltax name="tauright" mp="0.01" value="0.001" />
+    </group>
+    <!-- ranges -->
+    <group kind="4">
+      <deltax name="background" mp="0.01" value="0.001" />
+    </group>
+  </groups>
+</parameters>

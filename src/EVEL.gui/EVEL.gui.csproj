@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61F9B89F-BE01-4CE5-8AF0-1EC674E2FD4E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Evel.gui</RootNamespace>
+    <AssemblyName>LT10</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <StartupObject>Evel.gui.Program</StartupObject>
+    <ManifestCertificateThumbprint>9C848BC64FB080E0707ACA435CD18EC509999F2C</ManifestCertificateThumbprint>
+    <ManifestKeyFile>EVEL.gui_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <Win32Resource>..\EVEL.gui\resources.res</Win32Resource>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>D:\Devel\.NET\cs\EVEL\Build\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en-GB</TargetCulture>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Absolute</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>D:\Devel\.NET\cs\EVEL\Release\prerequisites</BootstrapperComponentsUrl>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\!Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\!Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Install|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\!Install\bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Install_NoFrame|AnyCPU' ">
+    <OutputPath>..\..\!Install\bin\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Chart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="dgtctrl, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\dgtctrl.dll</HintPath>
+    </Reference>
+    <Reference Include="GemBox.Spreadsheet">
+      <HintPath>..\..\lib\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AvailableGUIAssemblies.cs" />
+    <Compile Include="BindingCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BindingCreatorForm.Designer.cs">
+      <DependentUpon>BindingCreatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CellChangeStep.cs" />
+    <Compile Include="ChangeStep.cs" />
+    <Compile Include="ContainerToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridParameterView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DefaultGroupGUI.cs" />
+    <Compile Include="DefaultAdjusterGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefaultAdjusterGUI.Designer.cs">
+      <DependentUpon>DefaultAdjusterGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteDocument.Designer.cs">
+      <DependentUpon>DeleteDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentNameDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentNameDialog.Designer.cs">
+      <DependentUpon>DocumentNameDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceptionSendForm.Designer.cs">
+      <DependentUpon>ExceptionSendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBindingCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupBindingCreatorForm.Designer.cs">
+      <DependentUpon>GroupBindingCreatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupsDialog.Designer.cs">
+      <DependentUpon>GroupsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EvelWizard.cs" />
+    <Compile Include="Lt10Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Lt10Updater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lt10Updater.Designer.cs">
+      <DependentUpon>Lt10Updater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelChooserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelChooserDialog.Designer.cs">
+      <DependentUpon>ModelChooserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewDocument.Designer.cs">
+      <DependentUpon>NewDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProjectDialog.Designer.cs">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametersImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametersImportForm.Designer.cs">
+      <DependentUpon>ParametersImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasteChangeStep.cs" />
+    <Compile Include="PostSearchSortToolBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PostSearchToolBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectForm.Designer.cs">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BindingCreatorForm.resx">
+      <DependentUpon>BindingCreatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridParameterView.resx">
+      <DependentUpon>DataGridParameterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultAdjusterGUI.resx">
+      <DependentUpon>DefaultAdjusterGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteDocument.resx">
+      <DependentUpon>DeleteDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentNameDialog.resx">
+      <DependentUpon>DocumentNameDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionSendForm.resx">
+      <DependentUpon>ExceptionSendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupBindingCreatorForm.resx">
+      <DependentUpon>GroupBindingCreatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupsDialog.resx">
+      <DependentUpon>GroupsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupTabPage.resx">
+      <DependentUpon>GroupTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lt10Updater.resx">
+      <DependentUpon>Lt10Updater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelChooserDialog.resx">
+      <DependentUpon>ModelChooserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDocument.resx">
+      <DependentUpon>NewDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProjectDialog.resx">
+      <DependentUpon>NewProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametersImportForm.resx">
+      <DependentUpon>ParametersImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectForm.resx">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveBeforeFitDialog.resx">
+      <DependentUpon>SaveBeforeFitDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpectraDialog.resx">
+      <DependentUpon>SpectraDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpectrumFitForm.resx">
+      <DependentUpon>SpectrumFitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splashscreen.resx">
+      <DependentUpon>Splashscreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashscreenForm.resx">
+      <DependentUpon>SplashscreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WizardGuideForm.resx">
+      <DependentUpon>WizardGuideForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SaveBeforeFitDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaveBeforeFitDialog.Designer.cs">
+      <DependentUpon>SaveBeforeFitDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchChangeStep.cs" />
+    <Compile Include="SharedGroupTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SpectraContainerTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SpectraDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpectraDialog.Designer.cs">
+      <DependentUpon>SpectraDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpectrumFitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpectrumFitForm.Designer.cs">
+      <DependentUpon>SpectrumFitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splashscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splashscreen.Designer.cs">
+      <DependentUpon>Splashscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashscreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashscreenForm.Designer.cs">
+      <DependentUpon>SplashscreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WizardGuideForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WizardGuideForm.Designer.cs">
+      <DependentUpon>WizardGuideForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\runrun.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="help\Reference.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\savepic.bmp" />
+    <None Include="Resources\savetabs.bmp" />
+    <None Include="Resources\redo.bmp" />
+    <None Include="Resources\undo.bmp" />
+    <None Include="Resources\open.bmp" />
+    <None Include="Resources\LT10.jpg" />
+    <None Include="Resources\LT_about.jpg" />
+    <Content Include="lt.ico" />
+    <None Include="Resources\lt16.ico" />
+    <Resource Include="Resources\lt.ico" />
+    <Resource Include="Resources\ltdoc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EVEL.engine\EVEL.engine.csproj">
+      <Project>{4A2CFBF0-5536-4AE6-863F-41BF060CFF10}</Project>
+      <Name>EVEL.engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EVEL.minimalizations\EVEL.algorythms.csproj">
+      <Project>{2E18E297-7876-4BFB-84B1-E04C7B50F6AC}</Project>
+      <Name>EVEL.algorythms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EVEL.gui.interfaces\EVEL.gui.interfaces.csproj">
+      <Project>{25E24F7B-9018-4FE4-984A-908DBE3C1912}</Project>
+      <Name>EVEL.gui.interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EVEL.interfaces\EVEL.interfaces.csproj">
+      <Project>{CF8A21AE-170A-4224-87AB-D61469EB6953}</Project>
+      <Name>EVEL.interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EVEL.share\EVEL.share.csproj">
+      <Project>{A56DBC46-EE58-4CF7-AD26-193A46CBA4BB}</Project>
+      <Name>EVEL.share</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4B84E99-6F84-4B29-893F-FA05674E572F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Evel.engine.anh</RootNamespace>
+    <AssemblyName>anh</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\!Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\!Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Install|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\!Install\bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Install_NoFrame|AnyCPU' ">
+    <OutputPath>..\..\..\!Install\bin\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="share, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\share.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xpress, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\xpress.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnhGroupGUI.cs" />
+    <Compile Include="AnhProject.cs" />
+    <Compile Include="AnhSpectraContainer.cs" />
+    <Compile Include="AnhSpectraContainer_intensities_part.cs" />
+    <Compile Include="AnhSpectrum.cs" />
+    <Compile Include="DFP.cs" />
+    <Compile Include="FourStatesTrapping.cs" />
+    <Compile Include="DevTools.cs" />
+    <Compile Include="Erf.cs" />
+    <Compile Include="FastLtCurve.cs" />
+    <Compile Include="IndefiniteMatrixException.cs" />
+    <Compile Include="LTCurve.cs" />
+    <Compile Include="Mexm.cs" />
+    <Compile Include="PP.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestModel.cs" />
+    <Compile Include="ThreeStatesTrapping.cs" />
+    <Compile Include="TwoStatesTrapping.cs" />
+    <Compile Include="Wmexm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dfpmodel.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fourstatestrapping.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="testmodel.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="threestatestrapping.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="twostatestrapping.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="mexm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wmexm.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EVEL.engine\EVEL.engine.csproj">
+      <Project>{4A2CFBF0-5536-4AE6-863F-41BF060CFF10}</Project>
+      <Name>EVEL.engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EVEL.minimalizations\EVEL.algorythms.csproj">
+      <Project>{2E18E297-7876-4BFB-84B1-E04C7B50F6AC}</Project>
+      <Name>EVEL.algorythms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EVEL.gui.interfaces\EVEL.gui.interfaces.csproj">
+      <Project>{25E24F7B-9018-4FE4-984A-908DBE3C1912}</Project>
+      <Name>EVEL.gui.interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EVEL.gui\EVEL.gui.csproj">
+      <Project>{61F9B89F-BE01-4CE5-8AF0-1EC674E2FD4E}</Project>
+      <Name>EVEL.gui</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EVEL.interfaces\EVEL.interfaces.csproj">
+      <Project>{CF8A21AE-170A-4224-87AB-D61469EB6953}</Project>
+      <Name>EVEL.interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

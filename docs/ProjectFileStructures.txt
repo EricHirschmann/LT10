@@ -1,0 +1,81 @@
+﻿NORMAL
+
+1. Project file extension: evp
+2. Model file extension:	evm
+3. Project directory structure:
+	[DIR] <projectName>
+		[FILE] <projectName>.evp
+		[DIR] models
+			[DIR] <document1Name>
+				[FILE] <document1Name>.evm
+				[DIR] spectra
+					[FILE] spectrum1
+					[FILE] spectrum2
+					...
+					[FILE] spectrumn
+				
+			[DIR] <document2Name>
+				[FILE] <document2Name>.evm
+				[DIR] spectra
+					[FILE] spectrum1
+					[FILE] spectrum2
+					...
+					[FILE] spectrumn
+			...
+			[DIR] <documentnName>
+				[FILE] <documentnName>.evm
+				[DIR] spectra
+					[FILE] spectrum1
+					[FILE] spectrum2
+					...
+					[FILE] spectrumn
+-----------------------------------------------------------------------------
+COMPRESSED INCLUDED SPECTRA
+
+1. Project file extension: evpc
+2. Model file extension:	evmc
+3. Project directory structure:
+	[DIR] <projectName>
+		[FILE] <projectName>.evpc
+		[DIR] models
+			[DIR] <document1Name>
+				[FILE] <document1Name>.evmc
+				[DIR] spectra
+					[FILE] spectrum1
+					[FILE] spectrum2
+					...
+					[FILE] spectrumn
+				
+			[DIR] <document2Name>
+				[FILE] <document2Name>.evmc
+				[DIR] spectra
+					[FILE] spectrum1
+					[FILE] spectrum2
+					...
+					[FILE] spectrumn
+			...
+			[DIR] <documentnName>
+				[FILE] <documentnName>.evmc
+				[DIR] spectra
+					[FILE] spectrum1
+					[FILE] spectrum2
+					...
+					[FILE] spectrumn
+-----------------------------------------------------------------------------
+COMPRESSED EXCLUDED SPECTRA
+
+1. Project file extension: evpr
+2. Model file extension:	no model files
+3. Project directory structure:
+	[FILE] <projectName>.evmr
+4. Comments
+	Project is not portable between computers because evpr file contains original spectra paths
+-----------------------------------------------------------------------------
+COMPRESSED PACK
+
+1. Project file extension: evpp
+2. Model file extension:	no model files
+3. Project directory structure:
+	[FILE] <projectName>.evmp
+4. Comments
+	Project is fully portable between computers since evpp file spectra data is sealed in tothe project file.

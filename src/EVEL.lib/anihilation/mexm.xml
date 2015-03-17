@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- 
+  deltax for parameter is calculated with equation:
+  deltax = parameterValue * mp + value
+  where 'parameterValue' is actual value of parameter for which deltax is about to calculate
+  values of 'mp' and 'value' are defined below
+-->
+<parameters>
+  <groups>
+    <!-- sample -->
+    <group kind="1">
+      <deltax name="contribution" mp="0.0005" value="0.0001" />
+      <deltax name="int" mp="0.0001" value="0.00001" />
+      <deltax name="tau" mp="0.0005" value="0" /> <!-- (0.005 * scale) is added programaticaly -->
+    </group>
+    <!-- source -->
+    <group kind="2">
+      <deltax name="contribution" mp="0" value="1e-6" />
+      <deltax name="int" mp="0.0001" value="0.00001" />
+      <deltax name="tau" mp="0.0005" value="0" /> <!-- (0.005 * scale) is added programaticaly -->
+    </group>
+    <!-- prompt -->
+    <group kind="3">
+      <deltax name="int" mp="0.0000000154963" value="1e-9" />
+      <deltax name="fwhm" mp="0.0001" value="0.0001" />
+      <deltax name="shift" mp="0" value="0.0000028" />
+      <deltax name="tauleft" mp="0.01" value="0.0001" />
+      <deltax name="tauright" mp="0.01" value="0.0001" />
+    </group>
+    <!-- ranges -->
+    <group kind="4">
+      <deltax name="background" mp="0.01" value="0.001" />
+    </group>
+  </groups>
+</parameters>
