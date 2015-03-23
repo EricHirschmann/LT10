@@ -76,7 +76,14 @@ namespace Evel.engine.anh {
             doCurve0(component);
 
             //FastLtCurve.Shape(component, 1, p.tau, p.fwhm, p.bs, p.nstart, p.nstop, -p.shift-p.cs);
-
+#if DEBUG
+            double sum = 0.0;
+            for (int i = 0; i < component.Length; i++)
+            {
+                sum += component[i];
+            }
+            System.Diagnostics.Debug.Assert(Math.Abs(sum - 1.0) < 1e-4);
+#endif
         }
 
         private void setArrays() {
@@ -456,17 +463,21 @@ namespace Evel.engine.anh {
                 /*IntegrateFunY.*/
                 doIntegrateFunY();
             if (p.with_fi) {
-                if (!p.lf) {
+                if (!p.lf)
+                {
+                    //p.rt only
                     for (n = NSMEM; n <= NSTOPM + 1; n++)
                         Mod_Data[n] = YY[n] + Fi0[n];
-                } else {
-                    if (p.lf && p.rt) {
-                        for (n = NSMEM; n <= NSTOPM + 1; n++)
-                            Mod_Data[n] = YY[n] + ni_avg * Fi0[n];
-                    } else {
-                        for (n = NSMEM; n <= NSTOPM + 1; n++)
-                            Mod_Data[n] = YY[n] + psi_avg * Fi0[n];
-                    }
+                }
+                else if (p.lf && p.rt)
+                {
+                    for (n = NSMEM; n <= NSTOPM + 1; n++)
+                        Mod_Data[n] = YY[n] + ni_avg * Fi0[n];
+                }
+                else
+                {
+                    for (n = NSMEM; n <= NSTOPM + 1; n++)
+                        Mod_Data[n] = YY[n] + psi_avg * Fi0[n];
                 }
             }
             
@@ -498,14 +509,6 @@ namespace Evel.engine.anh {
         private /*static*/ double[] a;// = new double[21];
         private /*static*/ double[] b;// = new double[21];//               array[-10..10] of double;
         private /*static*/ double norm;
-
-        private double getx(double t) {
-            return sum + dif * t;
-        }
-
-        private double getc(double getc_a) {
-            return dif * getc_a;
-        }
 
         /// <summary>
         /// determines 4 points for integration with the Gauss method
