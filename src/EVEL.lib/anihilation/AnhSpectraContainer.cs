@@ -5,6 +5,7 @@ using Evel.interfaces;
 using Evel.share;
 using Evel.engine.algorythms;
 using System.Xml;
+using System.Linq;
 
 namespace Evel.engine.anh {
 
@@ -38,37 +39,25 @@ namespace Evel.engine.anh {
         /// </summary>
         public void setLongestRange() {
             int i;
-            //foreach (AnhSpectrum spectrum in this._spectra) {
-            for (i = 0; i < this._spectra.Count; i++) {
+            for (i = 0; i < this._spectra.Count; i++)
+            {
                 double rightRange = this._spectra[i].Parameters[4].Components[0][2].Value;
                 if (rightRange > _longestRange)
                     _longestRange = (int)rightRange;
             }
-            if (comps == null) {
-                //comps = new Dictionary<IComponent, double[]>();
-                //comps.Add(zeroComponent, new double[_longestRange + 3]);
-                //if (_ltCurveParams == null)
-                //    Model.convert(_ltCurveParams, Spectra[0].Parameters);
-                //else 
+
+            if (comps == null || comps.Length <= Spectra[0].Parameters[1].Components.Size + Spectra[0].Parameters[2].Components.Size)
+            {
                 if (_ltCurveParams.Count == 0)
                     Model.convert(_ltCurveParams, Spectra[0].Parameters);
-                comps = new double[_ltCurveParams.Count / Spectra[0].Parameters[3].Components.Size + 1][];
+                comps = new double[Spectra[0].Parameters[1].Components.Size + Spectra[0].Parameters[2].Components.Size + 1][];
                 comps[0] = new double[0];
             }
+
             if (comps[0].Length < _longestRange) {
                 for (i = 0; i < comps.Length; i++)
                     comps[i] = new double[_longestRange + 3];
             }
-            //if (comps.Count == 1 || comps[zeroComponent].Length < _longestRange) {
-            //    comps.Clear();
-            //    Model.convert(_ltCurveParams, Spectra[0].Parameters);
-            //    foreach (LTCurveParams p in _ltCurveParams) {
-            //        //IComponent c = p.component;
-            //        if (!comps.ContainsKey(p.component))
-            //            comps.Add(p.component, new double[_longestRange + 3]);
-            //    }
-            //    comps.Add(zeroComponent, new double[_longestRange + 3]);
-            //}
 
             //shape
             if (shape == null)
@@ -159,13 +148,15 @@ namespace Evel.engine.anh {
             //preparing labour arrays
             if (comps == null) {
                 setLongestRange();
-            } else {
-                if (shape.Length < _longestRange + 3)
-                    setLongestRange();
-                else {
-                    for (i = 1; i < comps.Length; i++)
-                        comps[0].CopyTo(comps[i], 0);
-                }
+            }
+            else if (shape.Length < _longestRange + 3 || comps.Length < _ltCurveParams.OfType<LTCurveParams>().Max(_p => _p.id) + 1)// comps.Length < _ltCurveParams.Count / prompt.Components.Size + 1)
+            {
+                setLongestRange();
+            }
+            else
+            {
+                for (i = 1; i < comps.Length; i++)
+                    comps[0].CopyTo(comps[i], 0);
             }
 
             LTCurveParams p;
@@ -606,30 +597,6 @@ namespace Evel.engine.anh {
                 }
             }
 
-
-            //foreach (LTCurveParams ltp in _ltCurveParams)
-            //    if (ltp.component is ExtComponent) {
-            //        exc = (ExtComponent)ltp.component;
-            //        if (firstAdd)
-            //            for (k = leftRange; k <= rightRange; k++)
-            //                _theoreticalSpectrum[k] = comps[ltp.id + 1][k] * exc.IntInCounts;
-            //        else
-            //            for (k = leftRange; k <= rightRange; k++)
-            //                _theoreticalSpectrum[k] += comps[ltp.id + 1][k] * exc.IntInCounts;
-            //        firstAdd = false;
-            //    }
-
-            //foreach (Component c in comps.Keys)
-            //    if (c is ExtComponent) {
-            //        ExtComponent component = (ExtComponent)c;
-            //        if (firstAdd)
-            //            for (k = leftRange; k <= rightRange; k++)
-            //                _theoreticalSpectrum[k] = comps[component][k] * component.IntInCounts;
-            //        else
-            //            for (k = leftRange; k <= rightRange; k++)
-            //                _theoreticalSpectrum[k] += comps[component][k] * component.IntInCounts;
-            //        firstAdd = false;
-            //    }
             for (k = leftRange; k <= rightRange; k++) {
                 _theoreticalSpectrum[k] += background;
             }
