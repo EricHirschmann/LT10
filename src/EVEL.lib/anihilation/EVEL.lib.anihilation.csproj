@@ -92,12 +92,17 @@
     <Compile Include="Mexm.cs" />
     <Compile Include="PP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlowDiffusion.cs" />
     <Compile Include="TestModel.cs" />
     <Compile Include="ThreeStatesTrapping.cs" />
     <Compile Include="TwoStatesTrapping.cs" />
     <Compile Include="Wmexm.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="slowdiffusion.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="dfpmodel.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
