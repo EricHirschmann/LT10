@@ -1,6 +1,8 @@
 \!Debug/
 \!Release/
 \!Install/
+Install/
+Install_NoFrame/
 log/
 Debug/
 Release/
@@ -8,3 +10,4 @@ Release/
 *.suo
 *.opensdf
 *.user
+*.db
