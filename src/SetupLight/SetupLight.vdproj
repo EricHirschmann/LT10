@@ -608,15 +608,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Lt10"
-        "ProductCode" = "8:{720AF2FF-B8AD-4E72-942F-647A6153FDEB}"
-        "PackageCode" = "8:{E5F55699-5C9E-4C05-AD50-4BCF82703664}"
+        "ProductCode" = "8:{DD701831-EB90-4A68-90A7-7F4F7B668387}"
+        "PackageCode" = "8:{C1B0D292-27F8-44AD-B10E-F2687BECB6A9}"
         "UpgradeCode" = "8:{720D20C5-FAFA-4CB1-B25F-7F24C0E38726}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.4.0"
+        "ProductVersion" = "8:1.4.1"
         "Manufacturer" = "8:USKatowice"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://prac.us.edu.pl/~kansy"
@@ -1219,7 +1219,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_63FC1470AE4944A89FCB1ADBC6A93905"
             {
-            "SourcePath" = "8:..\\EVEL.gui\\obj\\Debug\\LT10.exe"
+            "SourcePath" = "8:..\\EVEL.gui\\obj\\Release\\LT10.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_95DC05EDA83B4BC7B74298EB4DDE6206"
@@ -1247,7 +1247,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9E91C2A534194C0B9BA0A78438987D46"
             {
-            "SourcePath" = "8:..\\EVEL.lib\\anihilation\\obj\\Debug\\anh.dll"
+            "SourcePath" = "8:..\\EVEL.lib\\anihilation\\obj\\Release\\anh.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_95DC05EDA83B4BC7B74298EB4DDE6206"
