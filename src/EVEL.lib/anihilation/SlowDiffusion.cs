@@ -46,7 +46,7 @@ namespace Evel.engine.anh.stdmodels
             {
                 double norm = 0.39894228 / sig; //1 / Math.Sqrt(2 * Math.PI) / sig;
                 double mian = 0.5 / sig / sig;
-                double uu = Math.Log(1 / lamPs + taumin);
+                double uu = Math.Log(1 / lamPs - taumin);
 
                 Action<double, double> ff = (double u, double _c) =>
                 {
