@@ -76,14 +76,14 @@ namespace Evel.engine.anh {
             doCurve0(component);
 
             //FastLtCurve.Shape(component, 1, p.tau, p.fwhm, p.bs, p.nstart, p.nstop, -p.shift-p.cs);
-#if DEBUG
-            double sum = 0.0;
-            for (int i = 0; i < component.Length; i++)
-            {
-                sum += component[i];
-            }
-            System.Diagnostics.Debug.Assert(Math.Abs(sum - 1.0) < 1e-4);
-#endif
+//#if DEBUG
+//            double sum = 0.0;
+//            for (int i = 0; i < component.Length; i++)
+//            {
+//                sum += component[i];
+//            }
+//            System.Diagnostics.Debug.Assert(Math.Abs(sum - 1.0) < 1e-4);
+//#endif
         }
 
         private void setArrays() {
