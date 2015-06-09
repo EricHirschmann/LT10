@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Evel.engine.anh.stdmodels
 {
-    public class SlowDiffusion : TwoStatesTrapping
+    public class FreeVolume : TwoStatesTrapping
     {
 
         private void gauss_integral_4(double a, double b, Action<double, double> ff)
@@ -121,7 +121,7 @@ namespace Evel.engine.anh.stdmodels
         {
             get
             {
-                return "slowdiffusion";
+                return "freevolume";
             }
         }
 
@@ -129,13 +129,13 @@ namespace Evel.engine.anh.stdmodels
         {
             get
             {
-                return "[p text='Slow diffusion curve.\n\n']";
+                return "[p text='Free Volume curve.\n\n']";
             }
         }
 
         public override string Name
         {
-            get { return "Slow Diffusion"; }
+            get { return "Free Volume"; }
         }
 
         //public override CalculateParameterValueHandler CalculateParameterValue {
