@@ -150,16 +150,21 @@ namespace Evel.engine.anh.stdmodels
         private double fDist(double r, double tau, double sigma)
         {
             const double R0 = 0.166;
+            const double TauShift = 0.54;
 
             double rpr0 = r + R0;
             double rpr02 = rpr0 * rpr0;
             double rd = r / rpr0;
-            double lambda = 2.0 * (1.0 - rd + 1.0 / 2.0 / Math.PI * Math.Sin(2 * Math.PI * rd));
+            double lambda = 2.0 * (1.0 - rd + 0.5 / Math.PI * Math.Sin(2 * Math.PI * rd));
+            double z = 1.0 / lambda - TauShift;
 
-            double tmp = Math.Log((lambda) * tau) / sigma;
-            double f_lambda = 0.39894228 / sigma / (lambda) * Math.Exp(-0.5 * tmp * tmp);
+            double f_lambda = 0.0;
+            if (Math.Abs(z) > 1e-8)
+            {
+                f_lambda = 1.0 / Math.Sqrt(2.0 * Math.PI) / sigma / lambda * Math.Exp(-0.5 * sqr(Math.Log(z) / (tau - TauShift) / sigma));
+            }
 
-            double dlambda = 2.0 * R0 / rpr02 * (-1 + Math.Cos(2.0 * Math.PI * rd));
+            double dlambda = 2.0 * R0 / rpr02 * (-1.0 + Math.Cos(2.0 * Math.PI * rd));
             return -f_lambda * dlambda;
         }
 
@@ -231,7 +236,7 @@ namespace Evel.engine.anh.stdmodels
             else
             {
                 Bisection(0.54, out rrmin, 0.005, 100, FTao);
-                Bisection(tau + 0.54 + 4 * sigma, out rrmax, 0.05, 100, FTao);
+                Bisection(tau + 0.54 + 10 * tau * Math.Sqrt(1.0 - Math.Exp(-sqr(sigma))), out rrmax, 0.05, 100, FTao);
                 Simpson(0, tau, sigma, rrmin, rrmax, FR_R, 1e-8, 10, out rMean);
                 Simpson(rMean, tau, sigma, rrmin, rrmax, DR_R, 1e-8, 10, out sigR);
                 sigR = Math.Sqrt(sigR);
