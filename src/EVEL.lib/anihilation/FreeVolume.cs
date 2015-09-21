@@ -161,7 +161,7 @@ namespace Evel.engine.anh.stdmodels
             double f_lambda = 0.0;
             if (Math.Abs(z) > 1e-8)
             {
-                f_lambda = 1.0 / Math.Sqrt(2.0 * Math.PI) / sigma / lambda * Math.Exp(-0.5 * sqr(Math.Log(z) / (tau - TauShift) / sigma));
+                f_lambda = 1.0 / Math.Sqrt(2.0 * Math.PI) / sigma / lambda / lambda / z * Math.Exp(-0.5 * sqr(Math.Log(z / (tau - TauShift)) / sigma));
             }
 
             double dlambda = 2.0 * R0 / rpr02 * (-1.0 + Math.Cos(2.0 * Math.PI * rd));
@@ -601,7 +601,7 @@ namespace Evel.engine.anh.stdmodels
             //bulk
             {
                 LTCurveParams pfree = GetCurrentParameters();
-                pfree.tau = 1 / lambdaFree;
+                pfree.tau = 1 / lam;
                 pfree.fraction = lambdaFree / lam;
             }
 
