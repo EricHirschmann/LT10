@@ -1,13 +1,13 @@
-﻿using System.Windows.Forms;
-using Evel.interfaces;
+﻿using System;
 using System.Collections.Generic;
-using System;
-//using chartings;
 using System.Drawing;
-using System.Threading;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 using digit;
+using Evel.interfaces;
 
 namespace Evel.gui {
 
@@ -40,8 +40,9 @@ namespace Evel.gui {
 
             try
             {
-                this.experimentSeries = new PointSeries(10000, Evel.engine.SpectraContainerBase.EXP_LITERAL, chart1, Color.Red, 1);
-                this.residualsSeries = new PointSeries(10000, Evel.engine.SpectraContainerBase.EXP_LITERAL, chart2, Color.BlueViolet, 1);
+                int dataLength = spectra.Max(s => s.DataLength);
+                this.experimentSeries = new PointSeries(dataLength, Evel.engine.SpectraContainerBase.EXP_LITERAL, chart1, Color.Red, 1);
+                this.residualsSeries = new PointSeries(dataLength, Evel.engine.SpectraContainerBase.EXP_LITERAL, chart2, Color.BlueViolet, 1);
 
                 foreach (ISpectrum spectrum in spectra)
                     spectraSelector.Items.Add(spectrum.Name);
